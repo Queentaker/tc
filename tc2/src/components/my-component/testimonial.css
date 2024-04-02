@@ -1,0 +1,63 @@
+:host {
+  display: block;
+}
+
+.testimonial-container {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+.testimonial-content {
+  flex: 1;
+}
+
+
+.testimonial-container.right .testimonial-image {
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+.testimonial-container.left .testimonial-image {
+  order: -1; /* This will move the image to the left */
+}
+
+.testimonial-quote {
+  max-width: 60%; /* Adjust as needed or remove if not necessary */
+}
+
+blockquote {
+  quotes: "“" "”" "‘" "’";
+  padding-left: 20px;
+  margin: 0;
+  font-size: 1.2em;
+  line-height: 1.5;
+  position: relative;
+}
+
+blockquote::before {
+  content: open-quote;
+  font-size: 4em;
+  position: absolute;
+  left: -10px;
+  top: -20px;
+  color: #ccc;
+}
+
+.testimonial-author {
+  margin-top: 10px;
+}
+
+.testimonial-description {
+  font-size: 0.9em;
+  color: #666;
+}
+
+
+
+
+/* Add additional styles and responsive adjustments as needed */
