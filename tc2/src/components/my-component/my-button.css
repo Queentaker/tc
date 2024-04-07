@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.apply-styles {
+  @apply text-red-100;
+}
+
+
+

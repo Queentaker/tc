@@ -30,7 +30,7 @@
   max-width: 60%; /* Adjust as needed or remove if not necessary */
 }
 
-blockquote {
+.blockquote {
   quotes: "“" "”" "‘" "’";
   padding-left: 20px;
   margin: 0;
@@ -39,7 +39,7 @@ blockquote {
   position: relative;
 }
 
-blockquote::before {
+.blockquote::before {
   content: open-quote;
   font-size: 4em;
   position: absolute;

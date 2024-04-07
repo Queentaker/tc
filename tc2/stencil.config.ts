@@ -1,4 +1,7 @@
 import { Config } from '@stencil/core';
+import tailwind, { tailwindHMR } from 'stencil-tailwind-plugin';
+
+
 
 export const config: Config = {
   namespace: 'tc2',
@@ -23,4 +26,9 @@ export const config: Config = {
   testing: {
     browserHeadless: "new",
   },
+
+    plugins: [
+  tailwind(),
+  tailwindHMR()]
+
 };

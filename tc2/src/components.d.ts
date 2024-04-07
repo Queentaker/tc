@@ -6,6 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface MyButton {
+    }
     interface MyTestimonial {
         "altText": string;
         "description": string;
@@ -16,6 +18,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLMyButtonElement extends Components.MyButton, HTMLStencilElement {
+    }
+    var HTMLMyButtonElement: {
+        prototype: HTMLMyButtonElement;
+        new (): HTMLMyButtonElement;
+    };
     interface HTMLMyTestimonialElement extends Components.MyTestimonial, HTMLStencilElement {
     }
     var HTMLMyTestimonialElement: {
@@ -23,10 +31,13 @@ declare global {
         new (): HTMLMyTestimonialElement;
     };
     interface HTMLElementTagNameMap {
+        "my-button": HTMLMyButtonElement;
         "my-testimonial": HTMLMyTestimonialElement;
     }
 }
 declare namespace LocalJSX {
+    interface MyButton {
+    }
     interface MyTestimonial {
         "altText"?: string;
         "description"?: string;
@@ -36,6 +47,7 @@ declare namespace LocalJSX {
         "quote"?: string;
     }
     interface IntrinsicElements {
+        "my-button": MyButton;
         "my-testimonial": MyTestimonial;
     }
 }
@@ -43,6 +55,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "my-button": LocalJSX.MyButton & JSXBase.HTMLAttributes<HTMLMyButtonElement>;
             "my-testimonial": LocalJSX.MyTestimonial & JSXBase.HTMLAttributes<HTMLMyTestimonialElement>;
         }
     }
